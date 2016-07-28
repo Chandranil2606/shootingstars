@@ -16,6 +16,7 @@ var bell1
 var bell2
 var bell3
 var bells = [bell1, bell2, bell3]
+var bell
 
 function preload(){
 	bell1 = loadSound("assets/bell1.mp3")
@@ -53,7 +54,6 @@ Star.prototype.move = function(){
 }
 
 Star.prototype.finish = function(){
-	bell.play()
 	this.beginX = this.endX
 	this.beginY = this.endY
 	stars[starNum] = new Star (this.beginX, this.beginY, this.starSize, this.starSize)
@@ -66,9 +66,9 @@ Star.prototype.finish = function(){
 function setup(){
 	createCanvas(windowWidth, windowHeight)
 	background(0)
-	var bell = random(bells)
 		
 	function doStar(){
+		bell = random(bells)
 		directionX = random(-50,50)
 		directionY = random(-50,50)
 		randomX=(random(width))
@@ -86,6 +86,7 @@ function setup(){
 		setTimeout(stars[starNum].move.bind(stars[starNum]), 1350)
 		setTimeout(stars[starNum].move.bind(stars[starNum]), 1400)
 		setTimeout(stars[starNum].finish.bind(stars[starNum]), 1450)
+		setTimeout(bell.play,1400)
 		starNum = starNum + 1
 	}
 
