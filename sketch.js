@@ -15,13 +15,14 @@ var directionY = 0
 var bell1
 var bell2
 var bell3
-var bells = [bell1, bell2, bell3]
+var bells = []
 var bell
 
 function preload(){
 	bell1 = loadSound("assets/bell1.mp3")
 	bell2 = loadSound("assets/bell2.mp3")
 	bell3 = loadSound("assets/bell3.mp3")
+	bells = [bell1, bell2, bell3]
 }
 function Star(beginX, beginY, endX, endY){
 	this.beginX = beginX
