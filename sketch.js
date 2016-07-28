@@ -52,6 +52,8 @@ function makeStar(){
 	fill(255,255,255,30)
 	noStroke()
 	ellipse(starXCoord, starYCoord, 15,15)
+	fill(255,255,255,50)
+	ellipse(starXCoord, starYCoord, 7, 7)
 }
 function tailOne(){
 	fill(255, 255, 255, 45)
@@ -59,6 +61,8 @@ function tailOne(){
 	starXCoord = starXCoord + direction 
 	starYCoord = starYCoord - 5
 	ellipse(starXCoord, starYCoord, 12, 12)
+	fill(255,255,255,55)
+	ellipse(starXCoord, starYCoord, 6, 6)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -68,6 +72,8 @@ function tailOneA(){
 	starXCoord = starXCoord + (direction/2) 
 	starYCoord = starYCoord - 2.5
 	ellipse(starXCoord, starYCoord, 10, 10)
+	fill(255,255,255,60)
+	ellipse(starXCoord, starYCoord, 5,5)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -78,6 +84,8 @@ function tailTwo(){
 	starXCoord = starXCoord + direction
 	starYCoord = starYCoord - 5
 	ellipse(starXCoord, starYCoord, 8, 8)
+	fill(255,255,255,65)
+	ellipse(starXCoord, starYCoord, 4,4)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -88,6 +96,8 @@ function tailTwoA(){
 	starXCoord = starXCoord + (direction/2)
 	starYCoord = starYCoord - 2.5
 	ellipse(starXCoord, starYCoord, 6, 6)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,3,3)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -95,9 +105,11 @@ function tailTwoA(){
 function tailThree(){
 	fill(255, 255, 255, 60)
 	noStroke()
-	starXCoord = starXCoord + direction
-	starYCoord = starYCoord - 5
+	starXCoord = starXCoord + (direction/2)
+	starYCoord = starYCoord - 3
 	ellipse(starXCoord, starYCoord, 5, 5)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,3,3)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -108,6 +120,8 @@ function tailThreeA(){
 	starXCoord = starXCoord + (direction/2)
 	starYCoord = starYCoord - 2.5
 	ellipse(starXCoord,starYCoord, 4, 4)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,3,3)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -115,9 +129,11 @@ function tailThreeA(){
 function tailFour(){
 	fill(255, 255, 255, 68)
 	noStroke()
-	starXCoord = starXCoord + direction
-	starYCoord = starYCoord - 5
+	starXCoord = starXCoord + (direction/3)
+	starYCoord = starYCoord - 3
 	ellipse(starXCoord, starYCoord, 3.5, 3.5)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,3,3)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -125,9 +141,11 @@ function tailFour(){
 function tailFourA(){
 	fill(255,255,255,72)
 	noStroke()
-	starXCoord = starXCoord + (direction/2)
-	starYCoord = starYCoord - 2.5
+	starXCoord = starXCoord + (direction/3)
+	starYCoord = starYCoord - 2
 	ellipse(starXCoord,starYCoord, 3,3)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,3,3)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -135,9 +153,11 @@ function tailFourA(){
 function tailFive(){
 	fill(255, 255, 255, 75)
 	noStroke()
-	starXCoord = starXCoord + direction
-	starYCoord = starYCoord - 5
+	starXCoord = starXCoord + (direction/3)
+	starYCoord = starYCoord - 2
 	ellipse(starXCoord, starYCoord, 2, 2)
+	fill(255,255,255,68)
+	ellipse(starXCoord,starYCoord,2,2)
 	shoot = new starLine(lineStartX, lineStartY, starXCoord, starYCoord)
 	shoot.create();
 }
@@ -153,15 +173,15 @@ function eraseTail(){
 function wholeStar(){
 	makeStar()
 	setTimeout(tailOne, 500)
-	setTimeout(tailOneA, 750)
-	setTimeout(tailTwo, 1000)
-	setTimeout(tailTwoA, 1250)
-	setTimeout(tailThree, 1500)
-	setTimeout(tailThreeA, 1750)
-	setTimeout(tailFour, 2000)
-	setTimeout(tailFourA, 2250)
-	setTimeout(tailFive, 2500)
-	setTimeout(eraseTail, 2750)
+	setTimeout(tailOneA, 700)
+	setTimeout(tailTwo, 800)
+	setTimeout(tailTwoA, 900)
+	setTimeout(tailThree, 1000)
+	setTimeout(tailThreeA, 1050)
+	setTimeout(tailFour, 1100)
+	setTimeout(tailFourA, 1150)
+	setTimeout(tailFive, 1200)
+	setTimeout(eraseTail, 1250)
 }
 
 setInterval(wholeStar, 3000)
