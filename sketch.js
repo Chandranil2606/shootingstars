@@ -12,7 +12,16 @@ var stars = []
 var starNum = 0
 var directionX = 0
 var directionY = 0
+var bell1
+var bell2
+var bell3
+var bells = [bell1, bell2, bell3]
 
+function preload(){
+	bell1 = loadSound("assets/bell1.mp3")
+	bell2 = loadSound("assets/bell2.mp3")
+	bell3 = loadSound("assets/bell3.mp3")
+}
 function Star(beginX, beginY, endX, endY){
 	this.beginX = beginX
 	this.beginY = beginY
@@ -44,6 +53,7 @@ Star.prototype.move = function(){
 }
 
 Star.prototype.finish = function(){
+	bell.play()
 	this.beginX = this.endX
 	this.beginY = this.endY
 	stars[starNum] = new Star (this.beginX, this.beginY, this.starSize, this.starSize)
@@ -56,7 +66,8 @@ Star.prototype.finish = function(){
 function setup(){
 	createCanvas(windowWidth, windowHeight)
 	background(0)
-	
+	var bell = random(bells)
+		
 	function doStar(){
 		directionX = random(-50,50)
 		directionY = random(-50,50)
